@@ -1,13 +1,13 @@
 ## Interface: 120100, 16001, 20506, 11509, 120105, 30405, 38002, 40402, 50504
-## Title: Uwowea Library: Addon Template
-## IconTexture: Interface/AddOns/Uwowea_buff_tracker/art/logo
-## Notes: Addon Template
+## Title: Uwowea: Advanced Settings
+## IconTexture: Interface/AddOns/Uwowea_AdvancedSettings/art/logo
+## Notes: Advanced Settings
 ## Author: Jan Galek
 ## Version: 1.0.0
 ## X-Category: Uwowea Library
 ## AllowAddOnTableAccess: 1
-## SavedVariablesPerCharacter: AddonTemplateVar
-## SavedVariables: AddonTemplateVar
+## SavedVariablesPerCharacter: Uwowea_Char_AdvancedSettings
+## SavedVariables: Uwowea_Acc_AdvancedSettings
 ## Category-enUS: Uwowea
 ## Category-ruRU: Uwowea
 ## Category-ptBR: Uwowea
@@ -15,9 +15,11 @@
 ## Category-zhCN: Uwowea
 ## Category-zhTW: Uwowea
 ## X-Curse-Project-ID: CURSEFORGE_ID
+## Dependencies: Uwowea_Core, Uwowea_UI
 
-
-Mocks\Mocks.lua
-Mocks\[Family]\Example.lua
-
+Locales.lua
+Data.lua
+GraphicsManager.lua
+Options.lua
 Core.lua
+

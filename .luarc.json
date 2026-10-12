@@ -3,6 +3,8 @@
     "workspace.library": [
         "~/.vscode/extensions/ketho.wow-api-0.22.3/Annotations/Core",
         "~/.vscode/extensions/ketho.wow-api-0.22.3/Annotations/FrameXML",
+        "../UI",
+        "../Core",
         "Libs"
     ],
     "runtime.version": "Lua 5.1",
@@ -22,8 +24,17 @@
         "CallErrorHandler",
         "QuestChoiceFrame",
         "RAID_CLASS_COLORS",
+        "Settings",
+        "SlashCmdList",
+        "SLASH_UWOWEA_ADVANCED_SETTINGS1",
+        "SLASH_UWOWEA_ADVANCED_SETTINGS2",
+        "SLASH_UWOWEA_ADVANCED_SETTINGS3",
         "------------------ External addons --------------------",
-        "------------------ Questie globals --------------------",
+        "Core",
+        "UI",
+        "Uwowea_Acc_AdvancedSettings",
+        "Uwowea_Char_AdvancedSettings",
+        "------------------ Questie globals --------------------"
     ],
     "format": {
         "defaultConfig": {
