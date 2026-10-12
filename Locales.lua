@@ -134,7 +134,7 @@ local L = {
     THREE_KINGS_TITLE = "3 Kings + 1 Prince (Bottleneck Preset)",
     THREE_KINGS_BTN = "Apply 3 Kings + 1 Prince",
     THREE_KINGS_DESC = "Optimizes the 3 primary CPU draw-call settings plus spell particles for maximum framerate: View Distance (7), Environment Detail (7), Ground Clutter (1), and Particle Density (Fair/1). Drastically alleviates CPU and GPU bottlenecks in demanding content.",
-    THREE_KINGS_APPLIED = "|cff00ff00[Uwowea Settings]|r Profile '|cffffd100%s|r' set to 3 Kings + 1 Prince (VD: 7, ED: 7, GC: 1, Particles: 1).",
+    THREE_KINGS_APPLIED = "|cff00ff00[Uwowea Settings]|r Profile '|cffffd100%s|r' set to 3 Kings + 1 Prince (VD: %d, ED: %d, GC: %d, Particles: %d).",
     APPLY_TO_ACTIVE_PROFILE = "Apply 3 Kings + 1 Prince to Active Profile",
     APPLY_TO_ACTIVE_PROFILE_DESC = "Quickly applies the 3 Kings + 1 Prince bottleneck preset directly to the currently active profile.",
 
@@ -381,7 +381,7 @@ if clientLocale == "csCZ" then
     L.THREE_KINGS_TITLE = "3 Kings + 1 Prince (Bottleneck profil)"
     L.THREE_KINGS_BTN = "Nastavit 3 Kings + 1 Prince"
     L.THREE_KINGS_DESC = "Aplikuje optimální draw-call nastavení: View Distance (7), Environment Detail (7), Ground Clutter (1) a Particle Density (Fair/1). Výrazně uvolňuje CPU a GPU bottleneck v náročných situacích."
-    L.THREE_KINGS_APPLIED = "|cff00ff00[Uwowea Settings]|r Profil '|cffffd100%s|r' nastaven na 3 Kings + 1 Prince (VD: 7, ED: 7, GC: 1, Částice: 1)."
+    L.THREE_KINGS_APPLIED = "|cff00ff00[Uwowea Settings]|r Profil '|cffffd100%s|r' nastaven na 3 Kings + 1 Prince (VD: %d, ED: %d, GC: %d, Částice: %d)."
     L.APPLY_TO_ACTIVE_PROFILE = "Aplikovat 3 Kings + 1 Prince na aktivní profil"
     L.APPLY_TO_ACTIVE_PROFILE_DESC = "Rychle aplikuje preset 3 Kings + 1 Prince na právě aktivní profil."
 

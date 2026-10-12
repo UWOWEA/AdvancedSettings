@@ -68,15 +68,13 @@ function addon.ApplyThreeKingsPreset(zoneType)
     -- 2. Update setting controls to notify Blizzard UI widgets
     UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_CUSTOM_DETAILS", profile.customDetails)
     UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_graphicsViewDistance", profile.graphicsViewDistance)
-    UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_graphicsEnvironmentDetail", profile.graphicsEnvironmentDetail7)
+    UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_graphicsEnvironmentDetail", profile.graphicsEnvironmentDetail)
     UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_graphicsGroundClutter", profile.graphicsGroundClutter)
     UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_graphicsParticleDensity", profile.graphicsParticleDensity)
-    UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_raidGraphicsParticleDensity", profile.raidGraphicsParticleDensity)
 
     UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_graphicsShadowQuality", profile.graphicsShadowQuality)
     UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_graphicsLiquidDetail", profile.graphicsLiquidDetail)
     UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_graphicsSSAO", profile.graphicsSSAO)
-    UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_raidGraphicsSSAO", profile.raidGraphicsSSAO)
     UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_graphicsDepthEffects", profile.graphicsDepthEffects)
     UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_graphicsComputeEffects", profile.graphicsComputeEffects)
     UpdateSettingControl("UWOWEA_ADV_" .. zoneType .. "_graphicsTextureResolution", profile.graphicsTextureResolution)
@@ -89,10 +87,27 @@ function addon.ApplyThreeKingsPreset(zoneType)
         local ped = isRaid and "raidGraphicsEnvironmentDetail" or "graphicsEnvironmentDetail"
         local pgc = isRaid and "raidGraphicsGroundClutter" or "graphicsGroundClutter"
         local ppd = isRaid and "raidGraphicsParticleDensity" or "graphicsParticleDensity"
-        SetCVar(pvd, "7")
-        SetCVar(ped, "7")
-        SetCVar(pgc, "1")
-        SetCVar(ppd, "1")
+        local psq = isRaid and "raidGraphicsShadowQuality" or "graphicsShadowQuality"
+        local pld = isRaid and "raidGraphicsLiquidDetail" or "graphicsLiquidDetail"
+        local pssao = isRaid and "raidGraphicsSSAO" or "graphicsSSAO"
+        local pde = isRaid and "raidGraphicsDepthEffects" or "graphicsDepthEffects"
+        local pce = isRaid and "raidGraphicsComputeEffects" or "graphicsComputeEffects"
+        local ptr = isRaid and "raidGraphicsTextureResolution" or "graphicsTextureResolution"
+        local psd = isRaid and "raidGraphicsSpellDensity" or "graphicsSpellDensity"
+        local ppt = isRaid and "raidGraphicsProjectedTextures" or "graphicsProjectedTextures"
+
+        SetCVar(pvd, tostring(profile.graphicsViewDistance))
+        SetCVar(ped, tostring(profile.graphicsEnvironmentDetail))
+        SetCVar(pgc, tostring(profile.graphicsGroundClutter))
+        SetCVar(ppd, tostring(profile.graphicsParticleDensity))
+        SetCVar(psq, tostring(profile.graphicsShadowQuality))
+        SetCVar(pld, tostring(profile.graphicsLiquidDetail))
+        SetCVar(pssao, tostring(profile.graphicsSSAO))
+        SetCVar(pde, tostring(profile.graphicsDepthEffects))
+        SetCVar(pce, tostring(profile.graphicsComputeEffects))
+        SetCVar(ptr, tostring(profile.graphicsTextureResolution))
+        SetCVar(psd, tostring(profile.graphicsSpellDensity))
+        SetCVar(ppt, tostring(profile.graphicsProjectedTextures))
     end
 
     -- 4. Apply to engine if active
@@ -104,7 +119,14 @@ function addon.ApplyThreeKingsPreset(zoneType)
     RefreshCurrentCategoryView()
 
     local zoneLabel = addon.GetText(nil, "ZONE_" .. string.upper(zoneType)) or zoneType
-    print(string.format(addon.GetText(nil, "THREE_KINGS_APPLIED"), zoneLabel))
+    print(string.format(
+        addon.GetText(nil, "THREE_KINGS_APPLIED"),
+        zoneLabel,
+        profile.graphicsViewDistance,
+        profile.graphicsEnvironmentDetail,
+        profile.graphicsGroundClutter,
+        profile.graphicsParticleDensity
+    ))
 end
 
 ---Builds the graphics options for a specific zone profile
